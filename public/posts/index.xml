@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed_style.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="https://www.rssboard.org/media-rss">
   <channel>
-    <title>/bin/devops</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on /bin/devops</description>
+    <title>Posts on /bin/devops</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on /bin/devops</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 10 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><icon>http://localhost:1313/img/icon.svg</icon>
+    <lastBuildDate>Sun, 10 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" /><icon>http://localhost:1313/img/icon.svg</icon>
     
     
     <item>
@@ -143,10 +143,6 @@ This MFA device is separate from the one you set up for the root user. You can u
 ]]></description>
       
     </item>
-    
-    
-    
-    
     
     
   </channel>

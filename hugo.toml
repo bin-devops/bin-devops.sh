@@ -1,4 +1,10 @@
 baseURL = 'https://bin-devops.sh/'
-languageCode = 'en-us'
+languageCode = 'en-gb'
 title = '/bin/devops'
 theme = 'ficurinia'
+
+paginate = 20
+summaryLength = 2
+
+[params]
+  posts = "posts"
