@@ -21,18 +21,13 @@ single comprehensive guide.
 
 1. Follow [this
    link](https://signin.aws.amazon.com/signup?request_type=register) to the AWS
-   signup page. If AWS have changed their URLs since this tutorial was published
-   and the link no longer works, here's a screenshot of the page you're trying to
-   find:
-2. Fill in the `Root user email address` and `AWS account name` as I've done in
-   the screenshot.
+   signup page.
+2. Fill in the `Root user email address` and `AWS account name`.
 3. Click `Verify email address`. This will cause an email to be sent to the
    `Root user email address` containing a six digit verification code. Type or
    paste that code into the `Verification code` box that should now be on your
-   screen, like in this screenshot.
-4. Now choose a secure password for your root user like in the screenshot below.
-   Don't think I've just doxed myself here. This AWS account will have been deleted
-   by the time this post is published.
+   screen.
+4. Now choose a secure password for your root user.
 5. On the next page: 5.1. Choose `Personal - for your own projects` 5.2. Fill in
    your name, phone number and address 5.3. Check the box saying you accept the
    terms of the AWS Customer Agreement 5.4. Click `Continue`.
@@ -103,10 +98,11 @@ applications` and set one up.
 2. In the search bar at the top of the AWS console, type `iam` and click on the
    `IAM Identity Center` link that appears.
 
-> [!tip] IAM vs IAM Identity Center The first two links in the screenshot above
-> are both used to create and manage users. `IAM` is the old way of doing this,
-> while `IAM Identity Center` is newer and recommended when creating new
-> accounts. This tutorial will use `IAM Identity Center`.
+> [!tip] IAM vs IAM Identity Center
+> When you search for `iam` in the search box, you'll see two services that
+> begin with that name. `IAM` is the old way of doing this, while `IAM Identity
+Center` is newer and recommended when creating new accounts. This tutorial
+> will use `IAM Identity Center`.
 
 3. First, we need to enable `IAM Identity Center` in our account by clicking on
    `Enable`.
