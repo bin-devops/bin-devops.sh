@@ -1,5 +1,5 @@
 +++
-title = 'The Complete Guide to Setting Up a New Aws Account 2025'
+title = 'The Complete Guide to Setting Up a New AWS Account 2025'
 date = 2024-11-10
 draft = false
 +++
@@ -8,21 +8,14 @@ When you create your first AWS account, it can be quite daunting figuring out ho
 
 # Prerequisites
 
-1. A computer with an internet connection
-2. A valid credit or debit card. You won't be spending anything today, but you can't create an AWS account with a valid payment method.
+- A computer with an internet connection
+- A valid credit or debit card. You won't be spending anything today, but you can't create an AWS account with a valid payment method.
 
-# Outline
+# Walkthrough
 
-1. **Create an AWS account**. We won't be doing much without this.
-2. **Secure the root user**. This user comes with all AWS accounts by default and has ultimate power. We will securely configure this user so no one else can get at it.
-3. **Set up AWS Organisations**. This service allowed you to link multiple AWS accounts into a single group for easy management. While we'll only be creating one AWS account today, it's still essential to set this up.
-4. **Set up IAM Identity Center**. This is where you will manage all users in your AWS Organisation. This needs to be enabled and configured after AWS Organisations so that it can integrate with it.
-5. **Create an IAM user**. You don't want to use the root user for day-to-day work, so you'll create an IAM user which you'll use to log in.
-6. **Secure the IAM user**.
+{{< details "**Part 1 - Creating the AWS account**. We won\'t be doing much without this" >}}
 
-# Part 1 - Creating the AWS account
-
-1. Follow [this link][aws-signup] to the AWS signup page. If AWS have changed their URLs since this tutorial was published and the link no longer works, here's a screenshot of the page you're trying to find:
+1. Follow [this link](https://signin.aws.amazon.com/signup?request_type=register) to the AWS signup page. If AWS have changed their URLs since this tutorial was published and the link no longer works, here's a screenshot of the page you're trying to find:
 2. Fill in the `Root user email address` and `AWS account name` as I've done in the screenshot.
 3. Click `Verify email address`. This will cause an email to be sent to the `Root user email address` containing a six digit verification code. Type or paste that code into the `Verification code` box that should now be on your screen, like in this screenshot.
 4. Now choose a secure password for your root user like in the screenshot below. Don't think I've just doxed myself here. This AWS account will have been deleted by the time this post is published.
@@ -38,7 +31,9 @@ When you create your first AWS account, it can be quite daunting figuring out ho
 10. Congratulation, you now have an AWS account.
 11. Click on `Go to the AWS Management Console` and we'll proceed to the next step, which is securing the account's root user.
 
-# Part 2 - Securing the root user
+{{< /details >}}
+
+{{< details "**Part 2 - Securing the root user**. This user comes with all AWS accounts by default and has ultimate power. We will securely configure this user so no one else can get at it." >}}
 
 1. Every AWS account has a root user that is created when the account is. This is the superuser with unlimited permissions, including being the only user that is able to close the account.
 2. Before we continue, we will enable Multi-Factor Authentication on the root user. Start by clicking the account name in the upper right corner, followed by `Security Credentials`.
@@ -49,19 +44,23 @@ When you create your first AWS account, it can be quite daunting figuring out ho
    4.4 Click `Next`
 4. If you already have an authenticator app on your phone, you can skip step 1 on the next page, otherwise follow the link to `See a list of compatible applications` and set one up.
 5. For step 2, click `Show QR code` and scan it with your authenticator app. For step 3, wait for the code to refresh itself twice, entering each code into the fields marked `MFA Code 1` and `MFA Code 2`. Click `Add MFA`.
-6. You'll be brought back to `Security credentials` where you'll see a green banner confirming setup of the MFA device. You'll need to use this device every time you log in as the root user, and if you lose it you'll need to [get on a phone call][aws-root-mfa-recovery] with AWS to reset it.
+6. You'll be brought back to `Security credentials` where you'll see a green banner confirming setup of the MFA device. You'll need to use this device every time you log in as the root user, and if you lose it you'll need to [get on a phone call](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_lost-or-broken.html#root-mfa-lost-or-broken) with AWS to reset it.
 7. Scrolling down this page, you'll see several different types of credentials: `Access keys`, `CloudFront key pairs` and `X.509 Signing certificates`. There shouldn't be any credentials on the root user, now or ever. If you've just created your account, then this should already be the case.
 
 > [!warning] Never let the root user have any credentials!
 > If you're using an existing account where any credentials have been added to the root user, I strongly suggest you delete them from the root user and recreate them on IAM users, and in the next part we'll create an IAM user for day to day use.
 
-# Part 3 - Setting up AWS Organizations
+{{< /details >}}
+
+{{< details "**Part 3 - Setting up AWS Organization**. This service allowed you to link multiple AWS accounts into a single group for easy management. While we'll only be creating one AWS account today, it's still essential to set this up." >}}
 
 1. Using the search bar at the top of the page, search for and select AWS Organizations.
 2. Choose `Create an organization`.
 3. Once again, the green banner signifies success.
 
-# Part 4 - Setting up IAM Identity Center
+{{< /details >}}
+
+{{< details "**Part 4 - Setting up IAM Identity Center**. This is where you will manage all users in your AWS Organisation. This needs to be enabled and configured after AWS Organisations so that it can integrate with it." >}}
 
 1. Since we're not going to be using the root user for any work, we need to create another user for this purpose.
 2. In the search bar at the top of the AWS console, type `iam` and click on the `IAM Identity Center` link that appears.
@@ -75,7 +74,9 @@ When you create your first AWS account, it can be quite daunting figuring out ho
 6. Name it whatever you want and click `Save changes`.
 7. You'll now see confirmation that it's renamed.
 
-# Part 5 - Creating an IAM user
+{{< /details >}}
+
+{{< details "**Part 5 - Creating an IAM user**. You don't want to use the root user for day-to-day work, so you'll create an IAM user which you'll use to log in." >}}
 
 1. Now that we've set up the `IAM Identity Center`, we can create our personal administrator user.
 2. Click on `Users` from the left of `IAM Identity Center` homepage.
@@ -104,7 +105,9 @@ When you create your first AWS account, it can be quite daunting figuring out ho
 20. Review your changes and click `Submit`.
 21. The IAM user is now created with administrator permissions, and before we start using it we need to set up and secure the user.
 
-# Part 6 - Setting up and securing the IAM user
+{{< /details >}}
+
+{{< details "**Part 6 - Setting up and securing the IAM user**. Before the IAM user can be used, it must be configured in IAM Identity Center and secured with MFA." >}}
 
 1. When we created the user in the end of last section, an email was sent to the email address we provided inviting our user to IAM Identity Center. Go to your email, find this message and click the link that says `Accept invitation`.
 2. Choose a password, enter the confirmation and click `Set new password`.
@@ -119,6 +122,8 @@ When you create your first AWS account, it can be quite daunting figuring out ho
 7. Click `Done` on the confirmation screen
 8. Click done and you'll appear on the AWS access portal. Click on `AdministratorAccess` underneath the account name to log into the account.
 
+{{< /details >}}
+
 # Finished
 
 And we're done. The lessons you will have taken away from this tutorial are:
@@ -126,6 +131,3 @@ And we're done. The lessons you will have taken away from this tutorial are:
 - How AWS Organizations and IAM Identity Center work together to manage the users in your organisation and what accounts they have access to.
 - That you should never log in with the root user if there are permissions you can give an IAM user.
 - That permissions are best attached to groups instead of users. That way you can just look inside a group to see how many people have those particular permissions.
-
-[aws-root-mfa-recovery]: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_lost-or-broken.html#root-mfa-lost-or-broken
-[aws-signup]: https://signin.aws.amazon.com/signup?request_type=register

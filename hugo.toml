@@ -8,3 +8,6 @@ summaryLength = 2
 
 [params]
   posts = "posts"
+
+  showRss = false
+  showTags = false
