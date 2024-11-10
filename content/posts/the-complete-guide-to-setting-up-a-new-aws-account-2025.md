@@ -1,5 +1,5 @@
 +++
-title = 'The Complete Guide to Setting Up a New AWS Account 2025'
+title = 'The Complete Guide to Setting Up a New AWS Account [2025]'
 date = 2024-11-10
 draft = false
 +++
