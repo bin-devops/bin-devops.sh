@@ -83,4 +83,4 @@ paginate = 5
         [[languages.en.menu.main]]
           identifier = "archive"
           name = "Archive"
-          url = "/archive"
+          url = "/posts"
