@@ -17,7 +17,7 @@ single comprehensive guide.
 
 # Walkthrough
 
-{{< details "**Part 1 - Creating the AWS account**. We won\'t be doing much without this" >}}
+{{< details "**Part 1 - Creating the AWS account**. We won't be doing much without this" >}}
 
 1. Follow [this
    link](https://signin.aws.amazon.com/signup?request_type=register) to the AWS
@@ -28,13 +28,14 @@ single comprehensive guide.
    paste that code into the `Verification code` box that should now be on your
    screen.
 4. Now choose a secure password for your root user.
-5. On the next page: 5.1. Choose `Personal - for your own projects` 5.2. Fill in
-   your name, phone number and address 5.3. Check the box saying you accept the
-   terms of the AWS Customer Agreement 5.4. Click `Continue`.
+5. On the next page:
+   - Choose `Personal - for your own projects`
+   - Fill in your name, phone number and address
+   - Check the box saying you accept the terms of the AWS Customer Agreement
+   - Click `Continue`.
 6. On the next page enter your payment card details. You'll only be charged a $1
    verification amount, which will then be refunded. After that, you'll only be
-   charged for whatever computer or storage resources you use. Click `Verify and
-Continue` to make the payment.
+   charged for whatever computer or storage resources you use. Click `Verify and Continue` to make the payment.
 7. Once your payment card has been verified, you now need to verify your phone
    number. Do that on this page and click `Send SMS`:
 8. You'll receive a SMS message with a 4-digit code. Enter that on the next
@@ -54,13 +55,13 @@ Continue` to make the payment.
 2. Before we continue, we will enable Multi-Factor Authentication on the root
    user. Start by clicking the account name in the upper right corner, followed by
    `Security Credentials`.
-3. Next you want to click `Assign MFA`. 4.1. On the next page: 4.2. Give your
-   MFA device a name, I chose `root` 4.3. Choose your type of authenticator device.
-   I've chosen `Authenticator app`, which is the most common option. You reading
-   this might already have one with other site set up in it. 4.4 Click `Next`
+3. Next you want to click `Assign MFA`.
+   - On the next page:
+   - Give your MFA device a name, I chose `root`
+   - Choose `Authenticator app` for your device type. This is the most common option.
+   - Click `Next`
 4. If you already have an authenticator app on your phone, you can skip step 1
-   on the next page, otherwise follow the link to `See a list of compatible
-applications` and set one up.
+   on the next page, otherwise follow the link to `See a list of compatible applications` and set one up.
 5. For step 2, click `Show QR code` and scan it with your authenticator app. For
    step 3, wait for the code to refresh itself twice, entering each code into the
    fields marked `MFA Code 1` and `MFA Code 2`. Click `Add MFA`.
@@ -75,10 +76,12 @@ applications` and set one up.
    shouldn't be any credentials on the root user, now or ever. If you've just
    created your account, then this should already be the case.
 
-> [!warning] Never let the root user have any credentials! If you're using an
-> existing account where any credentials have been added to the root user, I
-> strongly suggest you delete them from the root user and recreate them on IAM
-> users, and in the next part we'll create an IAM user for day to day use.
+> Never let the root user have any credentials!
+>
+> If you're using an existing account where any credentials have been added to
+> the root user, I strongly suggest you delete them from the root user and
+> recreate them on IAM users, and in the next part we'll create an IAM user for
+> day to day use.
 
 {{< /details >}}
 
@@ -98,19 +101,19 @@ applications` and set one up.
 2. In the search bar at the top of the AWS console, type `iam` and click on the
    `IAM Identity Center` link that appears.
 
-> [!tip] IAM vs IAM Identity Center
+> IAM vs IAM Identity Center
+>
 > When you search for `iam` in the search box, you'll see two services that
-> begin with that name. `IAM` is the old way of doing this, while `IAM Identity
-Center` is newer and recommended when creating new accounts. This tutorial
+> begin with that name. `IAM` is the old way of doing this, while `IAM Identity Center` is newer and recommended when creating new accounts. This tutorial
 > will use `IAM Identity Center`.
 
 3. First, we need to enable `IAM Identity Center` in our account by clicking on
    `Enable`.
-4. You'll now end up on the homepage for `IAM Identity Centre` with a green
+1. You'll now end up on the homepage for `IAM Identity Centre` with a green
    banner confirming it's set up.
-5. We now need to give a name to our identity center instance.
-6. Name it whatever you want and click `Save changes`.
-7. You'll now see confirmation that it's renamed.
+1. We now need to give a name to our identity center instance.
+1. Name it whatever you want and click `Save changes`.
+1. You'll now see confirmation that it's renamed.
 
 {{< /details >}}
 
@@ -120,11 +123,13 @@ Center` is newer and recommended when creating new accounts. This tutorial
    administrator user.
 2. Click on `Users` from the left of `IAM Identity Center` homepage.
 3. Click `Add user` from the upper right.
-4. On the next page, do the following: 4.1. Give your user a username 4.2.
-   Choose to send an email with password setup instructions 4.3. Give the user an
-   email address. I'm using Gmail's `+` feature to save creating a second Google
-   account for this tutorial. 4.4. Set the first, last and display names. 4.5. Skip
-   the rest of the tabs and click `Next`.
+4. On the next page, do the following:
+   - Give your user a username
+   - Choose to send an email with password setup instructions
+   - Give the user an email address. I'm using Gmail's `+` feature to save
+     creating a second Google account for this tutorial.
+   - Set the first, last and display names.
+   - Skip the rest of the tabs and click `Next`.
 5. Choose to send an email with pNext, choose `Create group`. This will open a
    new tab. Ensure you keep the current tab since we'll be returning to it once
    we've created the group.
@@ -170,13 +175,14 @@ Center` is newer and recommended when creating new accounts. This tutorial
 3. Sign in with your username and the password you just created.
 4. You'll now be prompted to set up MFA for your IAM user.
 
-> [!warning] This MFA device is separate from the one you set up for the root
+> Different MFA devices
+>
+> This MFA device is separate from the one you set up for the root
 > user. You can use the same device to manage both accounts, but you need to add
 > your IAM user account separately from the root user.
 
 5. Choose `Authenticator app` and click `Next`.
-6. Click `Show QR code`, scan it with your app and enter the `Authenticator
-code` to confirm.
+6. Click `Show QR code`, scan it with your app and enter the `Authenticator code` to confirm.
 7. Click `Done` on the confirmation screen
 8. Click done and you'll appear on the AWS access portal. Click on
    `AdministratorAccess` underneath the account name to log into the account.
