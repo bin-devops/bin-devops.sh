@@ -2,7 +2,6 @@ baseurl = "/"
 languageCode = "en-gb"
 theme = "terminal"
 paginate = 5
-summaryLength = 2
 
 [params]
   # dir name of your main content (default is `content/posts`).

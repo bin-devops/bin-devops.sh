@@ -2,6 +2,7 @@
 title = 'The Complete Guide to Setting Up a New AWS Account [2025]'
 date = 2024-11-10
 draft = false
+summary = "This tutorial brings together the many moving parts involved in setting up a new AWS account to get your project off to the best start it can."
 +++
 
 When you create your first AWS account, it can be quite daunting figuring out
